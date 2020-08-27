@@ -8,7 +8,9 @@ yarn-error.log
 coverage/
 build/
 .idea/
+.yarn/
 .yarnrc
+.eslintcache
 run/
 .DS_Store
 *.sw*

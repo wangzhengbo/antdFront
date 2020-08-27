@@ -29,11 +29,9 @@ const CountDownButton = ({ start, second, initText, resetText, runText, onEnd, .
   const [delay] = useState(1000);
   const [done, toggleDone] = useBoolean(false);
 
-  const timeout = usePersistFn(() => {
-    // 设置为运行结束后状态
-    // 发出倒计时结束事件
-    onEnd && onEnd();
-  });
+  // 设置为运行结束后状态
+  // 发出倒计时结束事件
+  const timeout = usePersistFn(() => onEnd?.());
 
   useInterval(
     () => {
@@ -56,7 +54,7 @@ const CountDownButton = ({ start, second, initText, resetText, runText, onEnd, .
   };
 
   return (
-    <Button loading={start} {...rest} block={true}>
+    <Button loading={start} {...rest} block>
       {buttonText()}
     </Button>
   );
