@@ -4,9 +4,11 @@ yarn-error.log
 node_modules/
 package-lock.json
 yarn.lock
+yarn-error.log
 coverage/
 build/
 .idea/
+.yarnrc
 run/
 .DS_Store
 *.sw*

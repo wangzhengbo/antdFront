@@ -1,14 +1,28 @@
 module.exports = {
   "extends": [
     "airbnb",
+    "airbnb/hooks",
+    "prettier",
     "eslint:recommended",
+    "prettier",
+    "prettier/babel",
+    "prettier/flowtype",
+    "prettier/react",
+    "prettier/standard",
+    "prettier/unicorn",
     "plugin:react/recommended",
-    "plugin:react-hooks/recommended"
+    "plugin:react-hooks/recommended",
+    "plugin:eslint-comments/recommended",
+    "plugin:markdown/recommended"
   ],
   "plugins": [
+    "babel",
     "react",
     "react-hooks",
     "html",
+    "unicorn",
+    "jest",
+    "promise",
     "compat"
   ],
   "env": {
@@ -22,6 +36,7 @@ module.exports = {
   },
   "parser": "babel-eslint",
   "parserOptions": {
+    "sourceType": "module",
     "ecmaFeatures": {
       "jsx": true
     },
