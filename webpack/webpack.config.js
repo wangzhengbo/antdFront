@@ -24,7 +24,7 @@ const postcssNormalize = require("postcss-normalize");
 const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
 const CompressionPlugin = require("compression-webpack-plugin");
 const ESLintPlugin = require("eslint-webpack-plugin");
-const ManifestPlugin = require("webpack-manifest-plugin");
+const { WebpackManifestPlugin } = require("webpack-manifest-plugin");
 const WorkboxWebpackPlugin = require("workbox-webpack-plugin");
 
 // react-dev-utils
@@ -841,7 +841,7 @@ module.exports = function () {
       isEnvProduction &&
         new CompressionPlugin({
           algorithm: "gzip",
-          cache: true,
+          // cache: true,
           // threshold: 10240,
         }),
 
@@ -885,7 +885,7 @@ module.exports = function () {
       // - "entrypoints" key: Array of files which are included in `index.html`,
       //   can be used to reconstruct the HTML if necessary
       isEnvProduction &&
-        new ManifestPlugin({
+        new WebpackManifestPlugin({
           fileName: "asset-manifest.json",
           publicPath: paths.publicUrlOrPath,
           generate: (seed, files, entrypoints) => {
